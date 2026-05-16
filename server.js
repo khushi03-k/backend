@@ -17,7 +17,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: ["https://frontend-uz5s.onrender.com"],
+  origin: "https://frontend-uz5s.onrender.com",
   credentials: true,
 }));
 app.use(express.json({ limit: "50mb" }));
