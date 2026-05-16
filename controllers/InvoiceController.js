@@ -12,7 +12,7 @@ exports.createInvoice = async (req, res) => {
 
     // Handle Logo File
     if (req.file) {
-      body.logo = `${process.env.BASE_URL || "http://localhost:5000"}/uploads/${req.file.filename}`;
+      body.logo = `${process.env.BASE_URL || "https://backend-1-vxvg.onrender.com"}/uploads/${req.file.filename}`;
     }
 
     let invoiceNo = body.invoiceNo;
@@ -160,7 +160,7 @@ exports.updateInvoice = async (req, res) => {
     }
 
     if (req.file) {
-      body.logo = `${process.env.BASE_URL || "http://localhost:5000"}/uploads/${req.file.filename}`;
+      body.logo = `${process.env.BASE_URL || "https://backend-1-vxvg.onrender.com"}/uploads/${req.file.filename}`;
     }
 
     const updated = await Invoice.findOneAndUpdate(

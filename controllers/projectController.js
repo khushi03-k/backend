@@ -9,7 +9,7 @@ exports.addProject = async (req, res) => {
 
 if (req.files?.images) {
   images = req.files.images.map(
-    (f) => "http://localhost:5000/uploads/" + f.filename
+    (f) => "https://backend-1-vxvg.onrender.com/uploads/" + f.filename
   );
 }
 let dwgFile = null;
@@ -19,7 +19,7 @@ if (req.files && req.files.dwgFile) {
 
   dwgFile = {
     name: file.originalname,
-    url: "http://localhost:5000/uploads/" + file.filename,
+    url: "https://backend-1-vxvg.onrender.com/uploads/" + file.filename,
   };
 }
     // =========================
@@ -207,7 +207,7 @@ exports.updateProject = async (req, res) => {
       let newImages = [];
       if (req.files?.images) {
         newImages = req.files.images.map(
-          (f) => "http://localhost:5000/uploads/" + f.filename
+          (f) => "https://backend-1-vxvg.onrender.com/uploads/" + f.filename
         );
       }
       update.images = [...existingImages, ...newImages];
@@ -218,7 +218,7 @@ exports.updateProject = async (req, res) => {
       const file = req.files.dwgFile[0];
       update.dwgFile = {
         name: file.originalname,
-        url: "http://localhost:5000/uploads/" + file.filename,
+        url: "https://backend-1-vxvg.onrender.com/uploads/" + file.filename,
       };
     }
 
@@ -368,7 +368,7 @@ exports.addDrawing = async (req, res) => {
 
     const images = (req.files || []).map(
       (f) =>
-        `${process.env.BASE_URL || "http://localhost:5000"}/uploads/${f.filename}`
+        `${process.env.BASE_URL || "https://backend-1-vxvg.onrender.com"}/uploads/${f.filename}`
     );
 
     if (type === "civil") {
@@ -447,7 +447,7 @@ exports.updateDrawing = async (req, res) => {
 
     const newImages = (req.files || []).map(
       (f) =>
-        `${process.env.BASE_URL || "http://localhost:5000"}/uploads/${f.filename}`
+        `${process.env.BASE_URL || "https://backend-1-vxvg.onrender.com"}/uploads/${f.filename}`
     );
 
     if (type === "civil") {

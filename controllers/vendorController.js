@@ -6,7 +6,7 @@ exports.addVendor = async (req, res) => {
     const data = { ...req.body, tenantId: req.tenantId }; // ✅ Inject Tenant ID
 
     if (req.file) {
-      data.image = "http://localhost:5000/uploads/" + req.file.filename;
+      data.image = "https://backend-1-vxvg.onrender.com/uploads/" + req.file.filename;
     }
 
     if (data.category) {
@@ -72,7 +72,7 @@ exports.updateVendor = async (req, res) => {
     const updatedData = { ...req.body };
 
     if (req.file) {
-      updatedData.image = "http://localhost:5000/uploads/" + req.file.filename;
+      updatedData.image = "https://backend-1-vxvg.onrender.com/uploads/" + req.file.filename;
     }
 
     if (updatedData.category) {

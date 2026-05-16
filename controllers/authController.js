@@ -115,7 +115,7 @@ exports.registerTenant = async (req, res) => {
 
     let companyLogo = "";
     if (req.file) {
-      companyLogo = `${process.env.BASE_URL || "http://localhost:5000"}/uploads/${req.file.filename}`;
+      companyLogo = `${process.env.BASE_URL || "https://backend-1-vxvg.onrender.com"}/uploads/${req.file.filename}`;
     }
 
     const tenant = await Tenant.create({
@@ -159,7 +159,7 @@ exports.updateTenant = async (req, res) => {
     let body = { ...req.body };
 
     if (req.file) {
-      body.companyLogo = `${process.env.BASE_URL || "http://localhost:5000"}/uploads/${req.file.filename}`;
+      body.companyLogo = `${process.env.BASE_URL || "https://backend-1-vxvg.onrender.com"}/uploads/${req.file.filename}`;
     }
 
     // Only hash password if it's being updated

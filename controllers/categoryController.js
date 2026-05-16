@@ -16,7 +16,7 @@ exports.addCategory = async (req, res) => {
   try {
     let image = "";
     if (req.file) {
-      image = "http://localhost:5000/uploads/" + req.file.filename;
+      image = "https://backend-1-vxvg.onrender.com/uploads/" + req.file.filename;
     }
     const newCat = new Category({ ...req.body, image, tenantId: req.tenantId });
     await newCat.save();
@@ -31,7 +31,7 @@ exports.updateCategory = async (req, res) => {
   try {
     const updatedData = { ...req.body };
     if (req.file) {
-      updatedData.image = "http://localhost:5000/uploads/" + req.file.filename;
+      updatedData.image = "https://backend-1-vxvg.onrender.com/uploads/" + req.file.filename;
     }
     const data = await Category.findOneAndUpdate(
       { _id: req.params.id, tenantId: req.tenantId },

@@ -12,7 +12,7 @@ exports.createEstimate = async (req, res) => {
 
     // Handle Logo File
     if (req.file) {
-      body.logo = `${process.env.BASE_URL || "http://localhost:5000"}/uploads/${req.file.filename}`;
+      body.logo = `${process.env.BASE_URL || "https://backend-1-vxvg.onrender.com"}/uploads/${req.file.filename}`;
     }
 
     const { items } = body;
@@ -69,7 +69,7 @@ exports.updateEstimate = async (req, res) => {
     }
 
     if (req.file) {
-      body.logo = `${process.env.BASE_URL || "http://localhost:5000"}/uploads/${req.file.filename}`;
+      body.logo = `${process.env.BASE_URL || "https://backend-1-vxvg.onrender.com"}/uploads/${req.file.filename}`;
     }
 
     // Recalculate total if items updated
