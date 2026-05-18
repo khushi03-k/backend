@@ -16,8 +16,23 @@ const app = express();
 connectDB();
 
 // Middleware
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+  "https://frontend-uz5s.onrender.com"
+];
+
 app.use(cors({
-  origin: "https://frontend-uz5s.onrender.com",
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps, postman)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
 }));
 app.use(express.json({ limit: "50mb" }));
